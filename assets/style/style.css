@@ -1,0 +1,277 @@
+/* reset default style */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section{
+    display: block;
+}
+
+
+blockquote, q{
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after{
+    content: '';
+    content: none;
+}
+
+
+/* main style */
+
+@font-face{
+    font-family: 'Gotham-Light';
+    src: url(fonts/GothamPro-Light.ttf) format('truetype');
+}
+
+@font-face{
+    font-family: 'Gotham-Medium';
+    src: url(fonts/GothamPro-Medium.ttf) format('truetype');
+}
+
+:root{
+    --font-color: #222222;
+    --bg-color: #f2f2f2;
+    --border-color: #cccccc;
+    --cont-color: #ffffff;
+    --link-color: #308BD1;
+    --error-color: #f44336;
+    --success-color: #4caf50;
+    --info-color: #17a2b8;
+}
+
+::placeholder{
+    font-family: 'Gotham-Light';
+    color: var(--font-color);
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track{
+    background: transparent;
+}
+  
+::-webkit-scrollbar-thumb{
+    background-color: var(--border-color);
+    border-radius: 4px;
+}
+
+*{
+    outline: none;
+    position: relative;
+    box-sizing: border-box;
+    color: var(--font-color);
+}
+
+html{
+    height: 100%;
+    font-size: 16px;
+    font-family: 'Gotham-Light';
+    letter-spacing: .5px;
+    line-height: 1.6em;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+}
+
+#page-content{
+    display: block;
+    width: 100%;
+    padding: 30px;
+    margin: 0 auto;
+}
+
+#nav-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 30px 0;
+}
+
+#table-section{
+    display: block;
+    background-color: var(--cont-color);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 30px;
+    padding: 15px;
+    overflow-x: scroll;
+}
+
+
+/* table style */
+
+table{
+    border-collapse: collapse;
+    table-layout: initial;
+    text-align: left;
+    width: 100%;
+    background-color: var(--cont-color);
+    color: var(--font-color);
+    overflow: hidden;
+}
+
+tr{
+    display: table-row;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    transition: all .4s ease;  
+}
+
+tr.clickable-row:hover{
+    background-color: var(--bg-color);
+    cursor: pointer;
+}
+
+th{
+    font-family: 'Gotham-Medium';
+    padding: 0 2px 5px 2px;
+    font-weight: normal;
+    overflow: hidden;
+    white-space: nowrap;
+    color: var(--font-color);
+    border-bottom: 2px solid var(--border-color);
+}
+
+td{
+    padding: 15px 10px;
+    vertical-align: middle;
+    overflow-x: hidden;
+    border-top: 1px solid var(--border-color);
+    white-space: nowrap;
+}
+
+
+/* button & input style */
+
+input{
+    width: 100%;
+    max-width: 300px;
+    height: 40px;
+    line-height: 40px;
+    font-family: 'Gotham-Light';
+    font-size: 14px;
+    background-color: var(--cont-color);
+    border: 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color: var(--font-color);
+    border-radius: 10px;
+    padding: 0 10px;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    transition: all .4s ease;  
+}
+
+input:focus{
+    box-shadow: var(--link-color) 0px 2px 8px 0px;
+    color: var(--link-color);
+}
+
+button{
+    height: 40px;
+    line-height: 40px;
+    font-family: 'Gotham-Light';
+    font-size: 16px;
+    color: var(--cont-color);
+    background-color: var(--link-color);
+    border: 0px;
+    box-shadow: var(--link-color) 0px 2px 8px 0px;
+    border-radius: 10px;
+    padding: 0 20px;
+    margin: 0 15px 0 0;
+    cursor: pointer;
+    overflow: hidden;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    transition: all .4s ease;  
+}
+
+.success-btn{
+    background-color: var(--success-color);
+    box-shadow: var(--success-color) 0px 2px 8px 0px;
+}
+
+.error-btn{
+    background-color: var(--error-color);
+    box-shadow: var(--error-color) 0px 2px 8px 0px;
+}
+
+button:hover{
+    background-color: var(--cont-color);
+    color: var(--link-color);
+}
+
+.success-btn:hover{
+    color: var(--success-color); 
+}
+
+.error-btn:hover{
+    color: var(--error-color); 
+}
+
+
+/* notification style */
+
+.note-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    width: 100%;
+    max-width: 600px;
+    padding: 5px  0 5px 15px;
+    margin: 0 auto;
+    background-color: var(--success-color);
+    border-radius: 30px;
+    z-index: 20;
+}
+
+.note-cont span{
+    color: var(--bg-color);
+}
+
+.note-cont .close-note{
+    font-size: 24px;
+    color: var(--bg-color);
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.note-cont .close-note:hover{
+    color: var(--link-color);
+}
